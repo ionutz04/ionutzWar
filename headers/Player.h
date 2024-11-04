@@ -25,7 +25,7 @@ public:
         return true;
     }
 };
-class AIPlayer : public Player {
+class Bot : public Player {
 public:
     void takeTurn() override {
         std::cout << "Bot's turn.\n";
