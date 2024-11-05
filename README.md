@@ -1,7 +1,7 @@
-# Titlu proiect
+# ionutzWar
 
 ## Descriere proiect
-Aplicatia ce ruleaza in terminal va oferii expetienta reala a jocurilor razboi si macao, fiind posibila si folosirea botilor ca jucatori reali.
+Aplicatia ionutzWar ruleaza in terminal si va oferii expetienta reala a jocurilor **_razboi_** si **_macao_**, fiind posibila si folosirea botilor ca jucatori reali. In acest repo voi documenta si voi uploada toate versiunile jocului, reusind asfel sa va elimin plictiseala de la orele de sisteme de operare :).
 
 ## Milestone #0
 
