@@ -10,7 +10,7 @@
 class Player {
 public:
     virtual void takeTurn() = 0;
-    virtual bool isHuman() const = 0;
+    //virtual bool isHuman() const = 0;
 
     virtual ~Player() = default;
 };
@@ -21,9 +21,9 @@ public:
         // Implement player actions here
     }
 
-    bool isHuman() const override {
-        return true;
-    }
+//    bool isHuman() const override {
+//        return true;
+//    }
 };
 class AIPlayer : public Player {
 public:
@@ -32,9 +32,9 @@ public:
         // Implement bot decision-making logic here
     }
 
-    bool isHuman() const override {
-        return false;
-    }
+//    bool isHuman() const override {
+//        return false;
+//    }
 };
 
 #endif //OOP_PLAYER_H

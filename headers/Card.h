@@ -14,11 +14,11 @@ public:
 
     Card(Rank rank, Suit suit) : rank(rank), suit(suit) {}
 
-    void display() const {
-        std::string rankStr = rankToString();
-        std::string suitStr = suitToString();
-        std::cout << "[" << rankStr << " of " << suitStr << "]";
-    }
+//    void display() const {
+//        std::string rankStr = rankToString();
+//        std::string suitStr = suitToString();
+//        std::cout << "[" << rankStr << " of " << suitStr << "]";
+//    }
 
 private:
     Rank rank;
