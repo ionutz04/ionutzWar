@@ -20,7 +20,7 @@ public:
             players.push_back(std::make_unique<HumanPlayer>());
         }
         for (int i = 0; i < botPlayers; ++i) {
-            players.push_back(std::make_unique<AIPlayer>());
+            players.push_back(std::make_unique<Bot>());
         }
 
         // Additional setup as required
