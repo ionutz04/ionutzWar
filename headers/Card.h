@@ -14,17 +14,17 @@ public:
 
     Card(Rank rank, Suit suit) : rank(rank), suit(suit) {}
 
-//    void display() const {
-//        std::string rankStr = rankToString();
-//        std::string suitStr = suitToString();
-//        std::cout << "[" << rankStr << " of " << suitStr << "]";
-//    }
+    void display() const {
+        std::string rankStr = rankToString();
+        std::string suitStr = suitToString();
+        std::cout << "[" << rankStr << " of " << suitStr << "]";
+    }
 
 private:
     Rank rank;
     Suit suit;
 
-    std::string rankToString() const {
+    [[maybe_unused]]std::string rankToString() const {
         switch (rank) {
             case Two: return "2";
             case Three: return "3";
@@ -43,6 +43,22 @@ private:
         }
     }
 
+public:
+    bool operator==(const Card &rhs) const {
+        return rank == rhs.rank &&
+               suit == rhs.suit;
+    }
+
+    bool operator!=(const Card &rhs) const {
+        return !(rhs == *this);
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, const Card &card) {
+        os << "rank: " << card.rank << " suit: " << card.suit;
+        return os;
+    }
+
+private:
     std::string suitToString() const {
         switch (suit) {
             case Hearts: return "♥";

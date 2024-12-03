@@ -20,12 +20,12 @@ public:
         }
     }
 
-    void shuffle() {
+    [[maybe_unused]]void shuffle() {
         auto rng = std::default_random_engine{ std::random_device{}() };
         std::shuffle(cards.begin(), cards.end(), rng);
     }
 
-    Card draw() {
+    [[maybe_unused]]Card draw() {
         Card card = cards.back();
         cards.pop_back();
         return card;
