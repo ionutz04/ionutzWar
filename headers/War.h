@@ -13,7 +13,7 @@ class War : public CardGame {
 public:
     War(int humans, int bots) : CardGame(humans, bots) {}
 
-    void initializeGame() override {
+    [[maybe_unused]]void initializeGame() override {
         std::cout << "Starting War game with " << humanPlayers << " human players and " << botPlayers << " bots...\n";
 
         for (int i = 0; i < humanPlayers; ++i) {
@@ -26,19 +26,19 @@ public:
         // Additional setup as required
     }
 
-    void playTurn() override {
+    [[maybe_unused]]void playTurn() override {
         for (auto& player : players) {
             player->takeTurn();
             if (isGameOver()) break;
         }
     }
 
-    bool isGameOver() override {
+    [[maybe_unused]]bool isGameOver() override {
         // Implement War-specific game-over condition
         return false; // Placeholder
     }
 
-    void displayWinner() override {
+    [[maybe_unused]]void displayWinner() override {
         std::cout << "War: Displaying winner...\n";
         // Implement display logic here
     }

@@ -9,14 +9,14 @@
 
 class Player {
 public:
-    virtual void takeTurn() = 0;
+    [[maybe_unused]]virtual void takeTurn() = 0;
     [[maybe_unused]]virtual bool isHuman() const = 0;
 
     virtual ~Player() = default;
 };
 class HumanPlayer : public Player {
 public:
-    void takeTurn() override {
+    [[maybe_unused]]void takeTurn() override {
         std::cout << "Human player's turn.\n";
         // Implement player actions here
     }
@@ -27,7 +27,7 @@ public:
 };
 class Bot : public Player {
 public:
-    void takeTurn() override {
+    [[maybe_unused]]void takeTurn() override {
         std::cout << "Bot's turn.\n";
         // Implement bot decision-making logic here
     }

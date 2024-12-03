@@ -12,7 +12,7 @@
 #include "clearScreen.h"
 class Renderer {
 public:
-    void displayCard(const Card& card) {
+    [[maybe_unused]]void displayCard(const Card& card) {
         card.display();
         std::cout << " ";
     }

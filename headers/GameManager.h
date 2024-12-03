@@ -13,7 +13,7 @@
 
 class GameManager {
 public:
-    void startGame() {
+    [[maybe_unused]]void startGame() {
         int choice = displayMenu();
         int humanPlayers, botPlayers;
 
@@ -37,7 +37,7 @@ public:
 private:
     std::unique_ptr<CardGame> currentGame;
 
-    int displayMenu() {
+    [[maybe_unused]]int displayMenu() {
         std::cout << "Select a game:\n1. Macao\n2. War\nChoice: ";
         int choice;
         std::cin >> choice;

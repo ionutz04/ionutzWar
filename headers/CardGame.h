@@ -13,12 +13,12 @@ class CardGame {
 public:
     CardGame(int humans, int bots) : humanPlayers(humans), botPlayers(bots) {}
 
-    virtual void initializeGame() = 0;
-    virtual void playTurn() = 0;
-    virtual bool isGameOver() = 0;
-    virtual void displayWinner() = 0;
+    [[maybe_unused]]virtual void initializeGame() = 0;
+    [[maybe_unused]]virtual void playTurn() = 0;
+    [[maybe_unused]]virtual bool isGameOver() = 0;
+    [[maybe_unused]]virtual void displayWinner() = 0;
 
-    virtual ~CardGame() = default;
+    [[maybe_unused]]virtual ~CardGame() = default;
 
 protected:
     int humanPlayers;
