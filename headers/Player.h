@@ -6,7 +6,7 @@
 #define OOP_PLAYER_H
 
 #include <iostream>
-
+///@Player will be used as a abstract class for every type of player: human and bot
 class Player {
 public:
     // cppcheck-suppress unusedFunction
@@ -19,6 +19,7 @@ public:
 class HumanPlayer : public Player {
 public:
     // cppcheck-suppress unusedFunction
+    ///function which will be implemented in Macao and War because this has an interface purpose
     [[maybe_unused]]void takeTurn() override {
         std::cout << "Human player's turn.\n";
         // Implement player actions here
@@ -29,6 +30,7 @@ public:
         return true;
     }
 };
+///Has the same capabilities as Human, but this one will have a different game logic.
 class Bot : public Player {
 public:
     // cppcheck-suppress unusedFunction

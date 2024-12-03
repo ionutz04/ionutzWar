@@ -66,6 +66,7 @@ public:
 
 private:
     // cppcheck-suppress unusedFunction
+    ///This function is used for appearance of the app.
     [[maybe_unused]] std::string suitToString() const {
         switch (suit) {
             case Hearts: return "♥";

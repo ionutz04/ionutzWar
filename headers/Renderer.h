@@ -10,6 +10,7 @@
 #include <vector>
 #include "Card.h"
 #include "clearScreen.h"
+///This class is used in order to make the hacker theme of the app, do to the fact that is ran in terminal.
 class Renderer {
 public:
     // cppcheck-suppress unusedFunction

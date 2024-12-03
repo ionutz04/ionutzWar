@@ -13,6 +13,7 @@
 class GameManager {
 public:
     // cppcheck-suppress unusedFunction
+    ///Initialize the the names and the properties of the players.
     [[maybe_unused]] void startGame() {
         int choice = displayMenu();
         int humanPlayers, botPlayers;

@@ -9,7 +9,7 @@
 #include <vector>
 #include <memory>
 #include "Player.h"
-
+///This is the interface for the Macao and War game.
 class CardGame {
 public:
     CardGame(int humans, int bots) : humanPlayers(humans), botPlayers(bots) {}

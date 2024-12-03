@@ -22,12 +22,14 @@ public:
     }
 
     // cppcheck-suppress unusedFunction
+    ///Shuffle algorithm for Deck
     [[maybe_unused]] void shuffle() {
         auto rng = std::default_random_engine{ std::random_device{}() };
         std::shuffle(cards.begin(), cards.end(), rng);
     }
 
     // cppcheck-suppress unusedFunction
+    ///Drow is when an a card is pulled of a queue deck
     [[maybe_unused]] Card draw() {
         Card card = cards.back();
         cards.pop_back();
