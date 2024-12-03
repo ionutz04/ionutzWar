@@ -5,7 +5,6 @@
 #ifndef OOP_GAMEMANAGER_H
 #define OOP_GAMEMANAGER_H
 
-#endif //OOP_GAMEMANAGER_H
 #include <iostream>
 #include <memory>
 #include "Macao.h"
@@ -13,7 +12,8 @@
 
 class GameManager {
 public:
-    [[maybe_unused]]void startGame() {
+    // cppcheck-suppress unusedFunction
+    [[maybe_unused]] void startGame() {
         int choice = displayMenu();
         int humanPlayers, botPlayers;
 
@@ -37,10 +37,13 @@ public:
 private:
     std::unique_ptr<CardGame> currentGame;
 
-    [[maybe_unused]]int displayMenu() {
+    // cppcheck-suppress unusedFunction
+    [[maybe_unused]] int displayMenu() {
         std::cout << "Select a game:\n1. Macao\n2. War\nChoice: ";
         int choice;
         std::cin >> choice;
         return choice;
     }
 };
+
+#endif // OOP_GAMEMANAGER_H

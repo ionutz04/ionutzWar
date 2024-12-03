@@ -4,6 +4,7 @@
 
 #ifndef OOP_CARD_H
 #define OOP_CARD_H
+
 #include <string>
 #include <iostream>
 
@@ -14,8 +15,8 @@ public:
 
     Card(Rank rank, Suit suit) : rank(rank), suit(suit) {}
 
-    [[maybe_unused]]
-    void display() const {
+    // cppcheck-suppress unusedFunction
+    [[maybe_unused]] void display() const {
         std::string rankStr = rankToString();
         std::string suitStr = suitToString();
         std::cout << "[" << rankStr << " of " << suitStr << "]";
@@ -25,8 +26,8 @@ private:
     Rank rank;
     Suit suit;
 
-    [[maybe_unused]]
-    std::string rankToString() const {
+    // cppcheck-suppress unusedFunction
+    [[maybe_unused]] std::string rankToString() const {
         switch (rank) {
             case Two: return "2";
             case Three: return "3";
@@ -46,26 +47,26 @@ private:
     }
 
 public:
-    [[maybe_unused]]
-    bool operator==(const Card &rhs) const {
+    // cppcheck-suppress unusedFunction
+    [[maybe_unused]] bool operator==(const Card &rhs) const {
         return rank == rhs.rank &&
                suit == rhs.suit;
     }
 
-    [[maybe_unused]]
-    bool operator!=(const Card &rhs) const {
+    // cppcheck-suppress unusedFunction
+    [[maybe_unused]] bool operator!=(const Card &rhs) const {
         return !(rhs == *this);
     }
 
-    [[maybe_unused]]
-    friend std::ostream &operator<<(std::ostream &os, const Card &card) {
+    // cppcheck-suppress unusedFunction
+    [[maybe_unused]] friend std::ostream &operator<<(std::ostream &os, const Card &card) {
         os << "rank: " << card.rank << " suit: " << card.suit;
         return os;
     }
 
 private:
-    [[maybe_unused]]
-    std::string suitToString() const {
+    // cppcheck-suppress unusedFunction
+    [[maybe_unused]] std::string suitToString() const {
         switch (suit) {
             case Hearts: return "♥";
             case Diamonds: return "♦";
@@ -76,6 +77,4 @@ private:
     }
 };
 
-
-
-#endif //OOP_CARD_H
+#endif // OOP_CARD_H

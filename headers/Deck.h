@@ -4,6 +4,7 @@
 
 #ifndef OOP_DECK_H
 #define OOP_DECK_H
+
 #include <string>
 #include <iostream>
 #include <random>
@@ -20,12 +21,14 @@ public:
         }
     }
 
-    [[maybe_unused]]void shuffle() {
+    // cppcheck-suppress unusedFunction
+    [[maybe_unused]] void shuffle() {
         auto rng = std::default_random_engine{ std::random_device{}() };
         std::shuffle(cards.begin(), cards.end(), rng);
     }
 
-    [[maybe_unused]]Card draw() {
+    // cppcheck-suppress unusedFunction
+    [[maybe_unused]] Card draw() {
         Card card = cards.back();
         cards.pop_back();
         return card;
@@ -35,6 +38,4 @@ private:
     std::vector<Card> cards;
 };
 
-
-
-#endif //OOP_DECK_H
+#endif // OOP_DECK_H
