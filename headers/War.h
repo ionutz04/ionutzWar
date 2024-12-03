@@ -13,6 +13,7 @@ class War : public CardGame {
 public:
     War(int humans, int bots) : CardGame(humans, bots) {}
 
+    // cppcheck-suppress unusedFunction
     [[maybe_unused]]void initializeGame() override {
         std::cout << "Starting War game with " << humanPlayers << " human players and " << botPlayers << " bots...\n";
 
@@ -26,6 +27,7 @@ public:
         // Additional setup as required
     }
 
+    // cppcheck-suppress unusedFunction
     [[maybe_unused]]void playTurn() override {
         for (auto& player : players) {
             player->takeTurn();
@@ -33,11 +35,13 @@ public:
         }
     }
 
+    // cppcheck-suppress unusedFunction
     [[maybe_unused]]bool isGameOver() override {
         // Implement War-specific game-over condition
         return false; // Placeholder
     }
 
+    // cppcheck-suppress unusedFunction
     [[maybe_unused]]void displayWinner() override {
         std::cout << "War: Displaying winner...\n";
         // Implement display logic here

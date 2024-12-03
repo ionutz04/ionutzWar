@@ -12,16 +12,19 @@
 #include "clearScreen.h"
 class Renderer {
 public:
+    // cppcheck-suppress unusedFunction
     [[maybe_unused]]void displayCard(const Card& card) {
         card.display();
         std::cout << " ";
     }
 
+    // cppcheck-suppress unusedFunction
     [[maybe_unused]]void showMessage(const std::string& message) {
         std::cout << message << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 
+    // cppcheck-suppress unusedFunction
     [[maybe_unused]]void clearAndRedraw(const std::vector<Card>& cards) {
         clearScreen();
         for (const auto& card : cards) {
