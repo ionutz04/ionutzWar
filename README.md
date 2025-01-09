@@ -3,61 +3,27 @@
 ## Descriere proiect
 Aplicatia ionutzWar ruleaza in terminal si va oferii expetienta reala a jocurilor **_razboi_** si **_macao_**, fiind posibila si folosirea botilor ca jucatori reali. In acest repo voi documenta si voi uploada toate versiunile jocului, reusind asfel sa va elimin plictiseala de la orele de sisteme de operare :).
 
-## Milestone #0
-
-- [ ] Nume proiect (poate fi schimbat ulterior)
-- [ ] Scurtă descriere a temei alese, ce v-ați propus să implementați
 
 ## Milestone #1
 
-#### Cerințe
-- [ ] definirea a minim **3-4 clase** folosind compunere cu clasele definite de voi
-- [ ] constructori de inițializare cu parametri
-- [ ] pentru o aceeași (singură) clasă: constructor de copiere, `operator=` de copiere, destructor
-- [ ] `operator<<` pentru toate clasele pentru afișare (std::ostream)
-- [ ] cât mai multe `const` (unde este cazul)
-- [ ] implementarea a minim 3 funcții membru publice pentru funcționalități specifice temei alese, dintre care cel puțin 1-2 funcții mai complexe
-  - nu doar citiri/afișări sau adăugat/șters elemente într-un/dintr-un vector
-- [ ] scenariu de utilizare a claselor definite:
-  - preferabil sub formă de teste unitare, mai ales dacă vorbim de aplicații consolă 
-  - crearea de obiecte și apelarea tuturor funcțiilor membru publice în main
-  - vor fi adăugate în fișierul `tastatura.txt` DOAR exemple de date de intrare de la tastatură (dacă există); dacă aveți nevoie de date din fișiere, creați alte fișiere separat
-- [ ] tag de `git`: de exemplu `v0.1`
-- [ ] serviciu de integrare continuă (CI); exemplu: GitHub Actions
-
+Am creat:
+- [ ] Clasele Card, Rank si Suit. Aceste clase ajuta la clasificare tipurilor de jocuri de carti cu care merge aceasta versiune de aplicatie.  
+- [ ] Crearea Clase TestClass pentru verificare actiunilor pe Clasele create.
+- [ ] Clasa Deck si toate actiunile de Shuffle sort add si delete.
 ## Milestone #2
 
-#### Cerințe
-- [ ] separarea codului din clase în `.h` (sau `.hpp`) și `.cpp`
-- [ ] moșteniri:
-  - minim o clasă de bază și **3 clase derivate** din aceeași ierarhie
-  - ierarhia trebuie să fie cu bază proprie, nu derivată dintr-o clasă predefinită
-  - [ ] funcții virtuale (pure) apelate prin pointeri de bază din clasa care conține atributul de tip pointer de bază
-    - minim o funcție virtuală va fi **specifică temei** (e.g. nu simple citiri/afișări)
-    - constructori virtuali (clone): sunt necesari, dar nu se consideră funcții specifice temei
-    - afișare virtuală, interfață non-virtuală
-  - [ ] apelarea constructorului din clasa de bază din constructori din derivate
-  - [ ] clasă cu atribut de tip pointer la o clasă de bază cu derivate; aici apelați funcțiile virtuale prin pointer de bază, eventual prin interfața non-virtuală din bază
-    - [ ] suprascris cc/op= pentru copieri/atribuiri corecte, copy and swap
-    - [ ] `dynamic_cast`/`std::dynamic_pointer_cast` pentru downcast cu sens
-    - [ ] smart pointers (recomandat, opțional)
-- [ ] excepții
-  - [ ] ierarhie proprie cu baza `std::exception` sau derivată din `std::exception`; minim **3** clase pentru erori specifice
-  - [ ] utilizare cu sens: de exemplu, `throw` în constructor (sau funcție care întoarce un obiect), `try`/`catch` în `main`
-  - această ierarhie va fi complet independentă de ierarhia cu funcții virtuale
-- [ ] funcții și atribute `static`
-- [ ] STL
-- [ ] cât mai multe `const`
-- [ ] funcții *de nivel înalt*, de eliminat cât mai mulți getters/setters/funcții low-level
-- [ ] tag de `git`: de exemplu `v0.2`
+Am creat:
+- [ ] Clasele Player, MacaoPlayer si WarPlayer, pentru a clasifica tipurile de Jucatiori si cum trebuie sa li se imparta Cartile.
+- [ ] Am updatat Clasa de TestClass pentru verificarea operatiilor pe clasele create le @Milestone#2
 
 ## Milestone #3
 
-#### Cerințe
-- [ ] 2 șabloane de proiectare (design patterns)
-- [ ] o clasă șablon cu sens; minim **2 instanțieri**
-  - [ ] preferabil și o funcție șablon (template) cu sens; minim 2 instanțieri
-- [ ] tag de `git`: de exemplu `v0.3` sau `v1.0`
-
+Am creat:
+- [ ] logica jocului War, dar si am creat algoritmul pentru boti.
+- [ ] Am creat Clasa de verificare pentru fiecare caz a jocului.
 ## Resurse
-- adăugați trimiteri către resursele externe care v-au ajutat sau pe care le-ați folosit
+- https://en.cppreference.com/w/cpp/language/enum
+- https://en.cppreference.com/w/cpp/utility/move
+- https://en.cppreference.com/w/cpp/error/assert (pentru testele partiale ale aplicatiei)
+- https://en.cppreference.com/w/cpp/thread/thread (for War implementation for each player)
+- si sfantul youtube :)

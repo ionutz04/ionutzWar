@@ -23,7 +23,9 @@ int main() {
 //        return 1;
 //    }
     //Final test
-    WarGame warGame(5);
+    int n;
+    std::cin >> n;
+    WarGame warGame(n);
     warGame.playGame();
     return 0;
 }
