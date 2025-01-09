@@ -1,81 +1,74 @@
-//
-// Created by ionut on 11/4/2024.
-//
+#ifndef CARD_H
+#define CARD_H
 
-#ifndef OOP_CARD_H
-#define OOP_CARD_H
-
+#include "Rank.h"
+#include "Suit.h"
 #include <string>
-#include <iostream>
 
+/// The Card class represents a playing card with a specific rank and suit.
 class Card {
 public:
-    enum Suit { Hearts, Diamonds, Clubs, Spades };
-    enum Rank { Two = 2, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace };
+    /// Constructor: Creates a card with the given rank and suit.
+    Card(const Rank& rank, const Suit& suit) : rank_(rank), suit_(suit) {}
 
-    Card(Rank rank, Suit suit) : rank(rank), suit(suit) {}
+    /// Converts the card to a readable string format (e.g., "Ace of Spades").
+    std::string to_string() const {
+        return rank_to_string(rank_.get_value()) + " of " + suit_to_string(suit_.get_value());
+    }
 
-    // cppcheck-suppress unusedFunction
-    [[maybe_unused]] void display() const {
-        std::string rankStr = rankToString();
-        std::string suitStr = suitToString();
-        std::cout << "[" << rankStr << " of " << suitStr << "]";
+    /// Equality operator to compare two cards (both rank and suit must match).
+    bool operator==(const Card& other) const {
+        return rank_ == other.rank_ && suit_ == other.suit_;
+    }
+
+    /// Less-than operator for comparing cards (based on rank and then suit).
+    bool operator<(const Card& other) const {
+        return (rank_ < other.rank_) || (rank_ == other.rank_ && suit_ < other.suit_);
+    }
+
+    /// Greater-than operator for comparing cards (based on rank and then suit).
+    bool operator>(const Card& other) const {
+        return (rank_ > other.rank_) || (rank_ == other.rank_ && suit_ > other.suit_);
+    }
+
+    [[nodiscard]] const Rank &getRank() const {
+        return rank_;
     }
 
 private:
-    Rank rank;
-    Suit suit;
+    Rank rank_; // The rank of the card.
+    Suit suit_; // The suit of the card.
 
-    // cppcheck-suppress unusedFunction
-    [[maybe_unused]] std::string rankToString() const {
+    /// Converts a numerical rank value to a string representation.
+    static std::string rank_to_string(int rank) {
         switch (rank) {
-            case Two: return "2";
-            case Three: return "3";
-            case Four: return "4";
-            case Five: return "5";
-            case Six: return "6";
-            case Seven: return "7";
-            case Eight: return "8";
-            case Nine: return "9";
-            case Ten: return "10";
-            case Jack: return "Jack";
-            case Queen: return "Queen";
-            case King: return "King";
-            case Ace: return "Ace";
-            default: return "";
+            case 2: return "Two";
+            case 3: return "Three";
+            case 4: return "Four";
+            case 5: return "Five";
+            case 6: return "Six";
+            case 7: return "Seven";
+            case 8: return "Eight";
+            case 9: return "Nine";
+            case 10: return "Ten";
+            case 11: return "Jack";
+            case 12: return "Queen";
+            case 13: return "King";
+            case 14: return "Ace";
+            default: return "Unknown";
         }
     }
 
-public:
-    // cppcheck-suppress unusedFunction
-    [[maybe_unused]] bool operator==(const Card &rhs) const {
-        return rank == rhs.rank &&
-               suit == rhs.suit;
-    }
-
-    // cppcheck-suppress unusedFunction
-    [[maybe_unused]] bool operator!=(const Card &rhs) const {
-        return !(rhs == *this);
-    }
-
-    // cppcheck-suppress unusedFunction
-    [[maybe_unused]] friend std::ostream &operator<<(std::ostream &os, const Card &card) {
-        os << "rank: " << card.rank << " suit: " << card.suit;
-        return os;
-    }
-
-private:
-    // cppcheck-suppress unusedFunction
-    ///This function is used for appearance of the app.
-    [[maybe_unused]] std::string suitToString() const {
+    /// Converts a numerical suit value to a string representation.
+    static std::string suit_to_string(int suit) {
         switch (suit) {
-            case Hearts: return "♥";
-            case Diamonds: return "♦";
-            case Clubs: return "♣";
-            case Spades: return "♠";
-            default: return "";
+            case 1: return "Hearts";
+            case 2: return "Diamonds";
+            case 3: return "Clubs";
+            case 4: return "Spades";
+            default: return "Unknown";
         }
     }
 };
 
-#endif // OOP_CARD_H
+#endif // CARD_H
