@@ -20,7 +20,7 @@ Am creat:
 
 Am creat:
 - [ ] logica jocului War, dar si am creat algoritmul pentru boti.
-- [ ] Am creat Clasa de verificare pentru fiecare caz a jocului.
+- [ ] Am creat Clasa de verificare pentru fiecare caz al jocului.
 ## Resurse
 - https://en.cppreference.com/w/cpp/language/enum
 - https://en.cppreference.com/w/cpp/utility/move
